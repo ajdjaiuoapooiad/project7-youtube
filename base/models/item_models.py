@@ -4,11 +4,11 @@ from django.utils.crypto import get_random_string
 
 #関数
 
-def upload_image_to(instance,filename):
+def upload_image_to(instance,filename):  
     item_id=str(instance.id)
     return os.path.join('static/image','items',item_id,filename)
 
-def create_id():
+def create_id():  # urlから特定されないため   ランダムの文字列を入れる
     return get_random_string(22)
     
 
@@ -32,7 +32,8 @@ class Tag(models.Model):
 
 class Item(models.Model):
     id=models.CharField(default=create_id,primary_key=True,max_length=50,editable=False)
-    uid=models.CharField('user紐付け',editable=False,max_length=50)
+    
+    uid=models.CharField('user紐付け',editable=False,max_length=50) #user紐付け
     title=models.CharField('タイトル',max_length=50)
     text=models.TextField('詳細文')
     thumbnail=models.ImageField('画像',default='',blank=True,upload_to=upload_image_to)
