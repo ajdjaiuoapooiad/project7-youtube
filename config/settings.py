@@ -22,7 +22,7 @@ env=environ.Env()
 root=environ.Path(BASE_DIR/'secrets')
 
 # 本番環境用
-env.read_env(root('.env.prod'))
+#  env.read_env(root('.env.prod'))
 
 # 開発環境用
 env.read_env(root('.env.dev'))
