@@ -16,15 +16,15 @@ def create_id():  # urlから特定されないため   ランダムの文字列
 #models
 
 class Category(models.Model):
-    slug=
-    name=
+    slug=models.CharField(max_length=50,primary_key=True)
+    name=models.CharField(max_length=50)
     def __str__(self):
         return self.name
     
     
 class Tag(models.Model):
-    slug=
-    name=
+    slug=models.CharField(max_length=50,primary_key=True)
+    name=models.CharField(max_length=50)
     def __str__(self):
         return self.name
     
@@ -37,7 +37,7 @@ class Item(models.Model):
     title=models.CharField('タイトル',max_length=50)
     text=models.TextField('詳細文')
     thumbnail=models.ImageField('画像',default='',blank=True,upload_to=upload_image_to)
-    movie=models.FileField('動画',upload_to='')
+    movie=models.FileField('動画',upload_to='',blank=True,null=True)
     is_published=models.BooleanField('公開設定',default=True)
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
