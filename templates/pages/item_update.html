@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+
+
+
+{%block content%}
+    <div class="container">
+        <h1>投稿編集ページ</h1>
+        <div class="border w-50">
+
+
+            <form action="" method="POST" class="ml-5" enctype='multipart/form-data'>
+                {%csrf_token%}
+    
+                {% for field in form%}
+                <h4 class="my-5">{{field.label_tag}}</h4>
+                <p>{{field}}</p>
+                
+                {%endfor%}
+                <button type="submit" class="btn btn-info">更新する</button>
+            </form>
+
+
+        </div>
+
+    </div>
+{%endblock%}

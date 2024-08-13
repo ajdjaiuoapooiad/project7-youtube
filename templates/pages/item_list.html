@@ -12,6 +12,8 @@
             <div class="col-4 border">
                 <img src="/{{object.thumbnail}}" alt="" width="100%" height="200px">
                 <a href="/item/{{object.pk}}/" class=""><p>{{object.title}}</p></a>
+
+                <a href="item/update/{{object.pk}}/" class="btn btn-info">編集</a>                
             </div>
             {%endfor%}
         </div>

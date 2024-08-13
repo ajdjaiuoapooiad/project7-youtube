@@ -16,3 +16,11 @@ class ItemCreateView(generic.CreateView):
     form_class=ItemCreateForm
     template_name='pages/item_form.html'
     success_url='/'
+    
+    
+    
+class ItemUpdateView(generic.UpdateView):
+    model=Item
+    form_class=ItemCreateForm
+    template_name='pages/item_update.html'
+    success_url='/'
