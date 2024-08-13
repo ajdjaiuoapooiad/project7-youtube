@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+
+
+
+{%block content%}
+    <div class="container">
+        <div class="row">
+
+            <div class="col-9 border">
+
+                {% if item.movie %}
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video controls class="embed-responsive-item" src="/{{object.movie}}"></video>
+                    </div>
+                {% endif%}
+
+                <h4 class="my-5">{{object.title}}</h4>
+                <p class=my-5>{{object.text|linebreaksbr}}</p>
+                
+            </div>
+
+            <div class="col-3 border">
+                <h1>おすすめ一覧</h1>
+            </div>
+        </div>
+
+    </div>
+{%endblock%}

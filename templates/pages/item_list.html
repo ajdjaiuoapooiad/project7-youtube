@@ -13,7 +13,7 @@
             {%for object in object_list%}
             <div class="col-4 border">
                 <img src="/{{object.thumbnail}}" alt="" width="100%" height="200px">
-                <p>{{object.title}}</p>
+                <a href="/item/{{object.pk}}/" class=""><p>{{object.title}}</p></a>
             </div>
             {%endfor%}
         </div>
