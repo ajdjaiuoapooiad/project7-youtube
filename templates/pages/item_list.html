@@ -6,6 +6,19 @@
 {%endblock%}
 
 {%block content%}
+    <div class="container">
+        <h1>アイテム一覧</h1>
 
-    <h1>Hello</h1>
+        <div class="row">
+            {%for object in object_list%}
+            <div class="col-4 border">
+                <img src="/{{object.thumbnail}}" alt="" width="100%" height="200px">
+                <p>{{object.title}}</p>
+            </div>
+            {%endfor%}
+        </div>
+
+   
+
+    </div>
 {%endblock%}
