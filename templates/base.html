@@ -15,16 +15,20 @@
 
   <body>
     <header>
-
+      {%block header%}
+      {%include 'snippets/header.html'%}
+      {%endblock%}
     </header>
 
-    <main my-5>
+    <main class="my-5">
         {%block content%}
         {%endblock%}
     </main>
 
     <footer>
-
+      {%block footer%}
+      {%include 'snippets/footer.html'%}
+      {%endblock%}
     </footer>
 
 
