@@ -22,6 +22,7 @@ urlpatterns = [
     
     
     #Item
+    path('item/create/',views.ItemCreateView.as_view()),
     path('item/<str:pk>/',views.ItemDetailView.as_view()),
     path('',views.ItemListView.as_view()),
 ]

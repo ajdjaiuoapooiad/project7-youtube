@@ -1,5 +1,6 @@
 from django.views import generic
 from base.models import Item
+from base.forms import ItemCreateForm
 
 
 class ItemListView(generic.ListView):
@@ -10,4 +11,8 @@ class ItemListView(generic.ListView):
 class ItemDetailView(generic.DetailView):
     model=Item
     template_name='pages/item_detail.html'
- 
+
+class ItemCreateView(generic.CreateView):
+    form_class=ItemCreateForm
+    template_name='pages/item_form.html'
+    success_url='/'
