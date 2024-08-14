@@ -7,17 +7,25 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="item/create/">Create<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/item/create/">Create<span class="sr-only">(current)</span></a>
         </li>
+
+
+        <!--userがloginしているかどうか------------------->
+        {%if user.is_authenticated%}
         <li class="nav-item">
-          <a class="nav-link" href="login/">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="signup/">Signup</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Logout</a>
+            <a class="nav-link" href="/logout/">Logout</a>
           </li>
+
+        {%else%}
+        <li class="nav-item">
+          <a class="nav-link" href="/login/">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/signup/">Signup</a>
+        </li>
+        {%endif%}
+        
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">

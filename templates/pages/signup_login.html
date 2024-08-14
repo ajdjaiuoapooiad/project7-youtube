@@ -6,16 +6,34 @@
 {%block content%}
     <div class="container">
 
+        <!--Signup view---------->
+        {%if 'signup' in request.path%}
         <h1>新規登録ページ</h1>
         <form action="" method="POST">
         {%csrf_token%}
-            {%for field in form%}
-            <p>{{field.label_tag}}</p>
-            <p>{{field}}</p>
+            <input type="text" name="username" placeholder="username" class="">
+            <input type="email" name="email" placeholder="email" class="">
+            <input type="password" name="password" placeholder="password" class="">
 
-            {%endfor%}
 
             <button type="submit" class="btn btn-info">Signup</button>
         </form>
+        {%endif%}
+
+        <!--loginn view---------------->
+        {%if 'login' in request.path%}
+        <h1>ログインページ</h1>
+        <form action="" method="POST">
+        {%csrf_token%}
+
+            <input type="email" name="email" placeholder="email" class="">
+            <input type="password" name="password" placeholder="password" class="">
+
+
+            <button type="submit" class="btn btn-info">Login</button>
+        </form>
+        {%endif%}
+
+
     </div>
 {%endblock%}
