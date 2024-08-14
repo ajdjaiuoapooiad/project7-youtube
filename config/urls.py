@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
     #Account
-    
+    path('signup/',views.SignupView.as_view()),
     
     #
     
