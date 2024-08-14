@@ -46,7 +46,7 @@ class Item(models.Model):
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
     
-    category=models.ForeignKey(Category,on_delete=models.SET_NULL,blank=True,null=True)
+    category=models.ForeignKey(Category,on_delete=models.SET_NULL,null=True,blank=True)
     tags=models.ManyToManyField(Tag,blank=True)
     
     def __str__(self):

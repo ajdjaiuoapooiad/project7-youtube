@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Item,Category,Tag,User
+from base.models import Item,Category,Tag,User
 from base.forms import UserCreateForm
 from django.contrib.auth.admin import UserAdmin
 
