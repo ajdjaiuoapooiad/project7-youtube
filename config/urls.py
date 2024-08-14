@@ -15,13 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from base import views
+from base import views 
+from django.views.generic.edit import DeleteView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     
     
     #Item
+    path('item/delete/<str:pk>/',views.ItemDeleteView.as_view()),
     path('item/update/<str:pk>/',views.ItemUpdateView.as_view()),
     path('item/create/',views.ItemCreateView.as_view()),
     path('item/<str:pk>/',views.ItemDetailView.as_view()),

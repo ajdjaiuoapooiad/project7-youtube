@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+
+
+
+
+{%block content%}
+    <div class="container">
+
+        <h1>本当に削除しますか？</h1>
+        <form action="" method="POST">
+        {%csrf_token%}
+
+            <button type="submit" class="">削除する</button>
+        </form>
+    </div>
+{%endblock%}
