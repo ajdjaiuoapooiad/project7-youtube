@@ -43,7 +43,7 @@ class MyUserManager(BaseUserManager):
         return user
 
 
-class MyUser(AbstractBaseUser):
+class User(AbstractBaseUser):
     id=models.CharField(default=create_id,max_length=50,primary_key=True)
     username=models.CharField(max_length=50,default='名無し',unique=True,blank=True)
     #kokokara copy
