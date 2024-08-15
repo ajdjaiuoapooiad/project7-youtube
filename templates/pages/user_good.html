@@ -1,0 +1,56 @@
+{%extends 'base.html'%}
+
+
+
+{%block content%}
+
+        
+        <div class="">
+            <img class="rounded-circle" src="/static/sample_image/kkrn_icon_user_1.png" alt="Circle image" width="200px" height="200px" >
+
+            <h1>{{user.username}}</h1>
+            <img src="/static/sample_image/pexels-iriser-673803.jpg" alt="" class="" width="100%" height="400px">
+            
+ 
+        </div>
+
+        <div class="">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
+                    <li class="nav-item mx-5 ">
+                      <a class="nav-link" href="/user/{{user.pk}}/">投稿一覧</a>
+                    </li>
+                    <li class="nav-item mx-5 active">
+                      <a class="nav-link " href="/user/good/{{user.pk}}/">お気に入り一覧<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item mx-5 ">
+                        <a class="nav-link " href="/user/like/{{user.pk}}/">フォロー一覧</a>
+                    </li>
+                    
+                  </ul>
+                </div>
+            </nav>
+
+        </div>
+              
+        <div class="container my-5">
+            <h1>アイテム一覧</h1>
+    
+            <div class="row">
+                {%for object in object_list%}
+                <div class="col-4 border">
+                    <img src="/{{object.thumbnail}}" alt="" width="100%" height="200px">
+                    <a href="/item/{{object.pk}}/" class=""><p>{{object.title}}</p></a>
+    
+            
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+        
+
+{%endblock%}

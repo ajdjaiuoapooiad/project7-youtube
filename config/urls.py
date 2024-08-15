@@ -27,7 +27,10 @@ urlpatterns = [
     path('login/',views.Login.as_view()),
     path('signup/',views.SignupView.as_view()),
     
-    #
+    #User
+    path('user/<str:pk>/',views.UserListView.as_view()),
+    path('user/good/<str:pk>/',views.GoodView.as_view()),
+    path('user/like/<str:pk>/',views.LikeView.as_view()),
     
     #Item
     path('item/delete/<str:pk>/',views.ItemDeleteView.as_view()),

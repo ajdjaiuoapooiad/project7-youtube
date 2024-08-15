@@ -1,6 +1,8 @@
 from django.db import models
 import os
 from django.utils.crypto import get_random_string
+from django.contrib.auth import get_user_model
+
 
 #関数
 
@@ -45,6 +47,9 @@ class Item(models.Model):
     is_published=models.BooleanField('公開設定',default=True)
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
+
+    #Userとの紐付け
+
     
     category=models.ForeignKey(Category,on_delete=models.SET_NULL,null=True,blank=True)
     tags=models.ManyToManyField(Tag,blank=True)
