@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from base import views 
 from django.contrib.auth.views import LogoutView
+from django.conf import settings  # 増えた
+from django.conf.urls.static import static  # 増えた
 
 
 urlpatterns = [
@@ -32,6 +34,8 @@ urlpatterns = [
     path('user/good/<str:pk>/',views.GoodView.as_view()),
     path('user/like/<str:pk>/',views.LikeView.as_view()),
     path('profile/',views.ProfileUpdateView.as_view()),
+    path('account/',views.AccountUpdateView.as_view()),
+    
     
     #Item
     path('item/delete/<str:pk>/',views.ItemDeleteView.as_view()),
@@ -42,4 +46,4 @@ urlpatterns = [
     
     
     path('',views.ItemListView.as_view()),
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

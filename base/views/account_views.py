@@ -2,6 +2,7 @@ from base.models import User,Item,Profile
 from base.forms import UserCreateForm
 from django.views import generic
 from django.contrib.auth.views import LoginView
+from django.contrib.auth import get_user_model
 
 
 class SignupView(generic.CreateView):
@@ -16,6 +17,7 @@ class Login(LoginView):
 class UserListView(generic.ListView):
     template_name='pages/user_list.html'
     model=Item
+    
  
     
 class GoodView(generic.ListView):
@@ -37,3 +39,13 @@ class ProfileUpdateView(generic.UpdateView):
         self.kwargs['pk']=self.request.user.pk
         return super().get_object()   
     
+class AccountUpdateView(generic.UpdateView):
+    model=get_user_model()
+    template_name='pages/user_account.html'
+    fields={'username','email'}
+    success_url='/account/'
+    
+    def get_object(self):
+        # URL変数ではなく、現在のユーザーから直接pkを取得
+        self.kwargs['pk']=self.request.user.pk
+        return super().get_object()  

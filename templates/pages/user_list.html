@@ -1,15 +1,24 @@
 {%extends 'base.html'%}
+{% load static %}
+
+{% block customcss %}
+<link rel='stylesheet' type='text/css' href="{% static '/css/user_list.css' %}">
+{% endblock customcss %}
 
 
 
 {%block content%}
 
         
-        <div class="">
-            <img class="rounded-circle" src="/static/sample_image/kkrn_icon_user_1.png" alt="Circle image" width="200px" height="200px" >
+        <div class="relative ">
+            <img class="rounded-circle absolute" src="/static/sample_image/kkrn_icon_user_1.png" alt="Circle image" width="200px" height="200px" >
 
-            <h1>{{user.username}}</h1>
-            <img src="/static/sample_image/pexels-iriser-673803.jpg" alt="" class="" width="100%" height="400px">
+            <h1 class="absolute text1">{{user.username}}</h1>
+            <a href="" class="btn btn-primary absolute text2">チャンネル登録</a>
+
+
+
+            <img src="/static/sample_image/pexels-iriser-673803.jpg" alt="" class="mypage-img" width="100%" height="400px">
             
  
         </div>
@@ -44,7 +53,7 @@
                 {%for object in object_list%}
                 <div class="col-4 border">
                     <img src="/{{object.thumbnail}}" alt="" width="100%" height="200px">
-                    <a href="/item/{{object.pk}}/" class=""><p>{{object.title}}</p></a>
+                    <a href="/item/{{object.pk}}/" class="text-white"><p>{{object.title}}</p></a>
     
             
                 </div>

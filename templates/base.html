@@ -14,11 +14,17 @@
 
 
   <body>
+
+
+    {% block customcss %}
+
+    {% endblock customcss %}
     <header>
       {%block header%}
       {%include 'snippets/header.html'%}
       {%endblock%}
     </header>
+
 
     <main class="my-5">
         {%block content%}
