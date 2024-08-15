@@ -47,8 +47,12 @@ class Item(models.Model):
     is_published=models.BooleanField('公開設定',default=True)
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
-
-
+    
+    #追加
+    read_count=models.PositiveIntegerField('閲覧数',default=0)
+    good_count=models.PositiveIntegerField('高評価',default=0)
+    usertext=models.CharField('countよう',max_length=50,default='a')
+    
     
     category=models.ForeignKey(Category,on_delete=models.SET_NULL,null=True,blank=True)
     tags=models.ManyToManyField(Tag,blank=True)

@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+
+
+{%block content%}
+<div class="container">
+
+    <h1>プロフィール</h1>
+
+    <form action="" method="POST">
+    {%csrf_token%}
+        <p>name</p>
+        <input type="text" name="name" value="{{user.profile.name}}">
+
+   
+        <p>prefecture</p>
+        <input type="text" name="prefecture" value="{{user.profile.prefecture}}">
+        <p>city</p>
+        <input type="text" name="city" value="{{user.profile.city}}">
+        <p>address1</p>
+        <input type="text" name="address1" value="{{user.profile.address1}}">
+        <p>address2</p>
+        <input type="text" name="address2" value="{{user.profile.address2}}">
+        <p>tel</p>
+        <input type="text" name="tel" value="{{user.profile.tel}}">
+
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+
+
+{%endblock%}

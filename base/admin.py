@@ -1,5 +1,5 @@
 from django.contrib import admin
-from base.models import Item,Category,Tag,User
+from base.models import Item,Category,Tag,User,Profile
 from base.forms import UserCreateForm
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import Group
@@ -14,6 +14,14 @@ class TagInline(admin.TabularInline):
 class ItemAdmin(admin.ModelAdmin):
     inlines = [TagInline]
     exclude = ['tags']
+    
+    
+    
+    
+    
+class ProfileInline(admin.StackedInline):
+    model=Profile
+    can_delete=False
 
 
 class CustomAdmin(UserAdmin):

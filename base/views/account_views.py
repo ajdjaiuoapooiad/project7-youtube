@@ -1,4 +1,4 @@
-from base.models import User,Item
+from base.models import User,Item,Profile
 from base.forms import UserCreateForm
 from django.views import generic
 from django.contrib.auth.views import LoginView
@@ -25,4 +25,15 @@ class GoodView(generic.ListView):
 class LikeView(generic.ListView):
     template_name='pages/user_like.html'
     model=Item    
+    
+class ProfileUpdateView(generic.UpdateView):
+    model=Profile
+    template_name='pages/user_profile.html'
+    fields={'name','prefecture','city','address1','address2','tel'}
+    success_url='/profile/'
+
+    def get_object(self):
+        # URL変数ではなく、現在のユーザーから直接pkを取得
+        self.kwargs['pk']=self.request.user.pk
+        return super().get_object()   
     

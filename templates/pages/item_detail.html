@@ -6,19 +6,50 @@
     <div class="container">
         <div class="row">
 
+
+            <!----動画部分-------------------------------------->
             <div class="col-9 border">
 
-                {% if item.movie %}
+                {% if object.movie %}
                     <div class="embed-responsive embed-responsive-16by9">
                         <video controls class="embed-responsive-item" src="/{{object.movie}}"></video>
                     </div>
                 {% endif%}
 
-                <h4 class="my-5">{{object.title}}</h4>
-                <p class=my-5>{{object.text|linebreaksbr}}</p>
+                <h2 class="my-3 font-weight-bold">{{object.title}}</h2>
+                <a href="" class="btn btn-success">閲覧数　{{object.read_count }}　回視聴</a>
+
+                <p class="font-weight-bold my-3">{{object.text|linebreaksbr}}</p>
+
+                <div class="row my-5">
+
+
+                    <div class="col-10 row">
+                    <img src="/static/sample_image/kkrn_icon_user_1.png" alt="" class="rounded-circle mr-5" width="100px" height="100px">
+                    <a href="" class="mx-5 mt-4"><h2>username</h2></a>
+                    </div>
+                    
+
+                    <div class="col-2 mt-5">
+                    <a href="/item/good/{{object.pk}}/" class="btn btn-success">高評価{{object.good_count}}</a>
+                    </div>
+
+                </div>
+
+                <div class="text-right">
+               
+                </div>
+
+
+             
+
+
+                
                 
             </div>
 
+
+            <!--おすすめ一覧------------------------->
             <div class="col-3 border">
                 <h1>おすすめ一覧</h1>
             </div>
