@@ -48,7 +48,6 @@ class Item(models.Model):
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
 
-    #Userとの紐付け
 
     
     category=models.ForeignKey(Category,on_delete=models.SET_NULL,null=True,blank=True)

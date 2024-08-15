@@ -140,7 +140,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 #custom User_models　作ったから定義する
-AUTH_USER_MODEL='base.User'
+AUTH_USER_MODEL = 'base.User'
 
 LOGIN_URL='/login/'
 LOGIN_REDIRECT_URL='/'

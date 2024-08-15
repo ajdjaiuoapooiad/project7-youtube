@@ -16,6 +16,7 @@ class Login(LoginView):
 class UserListView(generic.ListView):
     template_name='pages/user_list.html'
     model=Item
+ 
     
 class GoodView(generic.ListView):
     template_name='pages/user_good.html'
